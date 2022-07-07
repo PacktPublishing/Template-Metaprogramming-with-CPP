@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.8)
+project(templatesbook)
+  
+
+if(MSVC)
+  message(status "Setting MSVC flags")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHc /Zc:__cplusplus /std:c++latest")
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+else()
+  message(status "Setting GCC/Clang flags")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a -fexceptions -g -Wall")
+endif()
+
+add_subdirectory(src/chapter_01)
+add_subdirectory(src/chapter_02)
+add_subdirectory(src/chapter_03)
+add_subdirectory(src/chapter_04)
+add_subdirectory(src/chapter_05)
+add_subdirectory(src/chapter_06)
+add_subdirectory(src/chapter_07)
+add_subdirectory(src/chapter_08)
+add_subdirectory(src/chapter_09)
