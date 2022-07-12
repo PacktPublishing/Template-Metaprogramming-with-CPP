@@ -68,8 +68,9 @@ namespace n902
 
       constexpr step_iterator operator++(int)
       {
+         auto ret = *this;
          pos_ = std::ranges::next(pos_, step_, end_);
-         return pos_;
+         return ret;
       }
 
       constexpr step_iterator& operator++()
@@ -546,7 +547,9 @@ int main()
    }
 
    {
-      std::vector<int> v{ 1, 5, 3, 2, 4, 7, 6, 8 };
+      std::cout << "square of even numbers (1):\n";
+
+      std::vector<int> v{ 1, 5, 3, 2, 8, 7, 6, 4 };
 
       // copy only the even elements
       std::vector<int> temp;
@@ -566,8 +569,11 @@ int main()
    }
 
    {
-      std::vector<int> v{ 1, 5, 3, 2, 4, 7, 6, 8 };
+      std::cout << "square of even numbers (2):\n";
 
+      std::vector<int> v{ 1, 5, 3, 2, 8, 7, 6, 4 };
+
+      std::ranges::sort(v);
       auto r =
          v
          | std::ranges::views::filter([](int const n) {return n % 2 == 0; })
@@ -579,10 +585,13 @@ int main()
    }
 
    {
+      std::cout << "square of even numbers (3):\n";
+
       namespace rv = std::ranges::views;
 
-      std::vector<int> v{ 1, 5, 3, 2, 4, 7, 6, 8 };
+      std::vector<int> v{ 1, 5, 3, 2, 8, 7, 6, 4 };
       
+      std::ranges::sort(v);
       auto r =
          rv::transform(
             rv::reverse(
@@ -747,17 +756,17 @@ int main()
    }
 
    {
-      constexpr std::ranges::empty_view<int> v;
-      static_assert(std::ranges::empty(v));
-      static_assert(std::ranges::size(v) == 0);
-      static_assert(std::ranges::data(v) == nullptr);
+      constexpr std::ranges::empty_view<int> ev;
+      static_assert(std::ranges::empty(ev));
+      static_assert(std::ranges::size(ev) == 0);
+      static_assert(std::ranges::data(ev) == nullptr);
    }
 
    {
-      constexpr std::ranges::single_view<int> v{42};
-      static_assert(!std::ranges::empty(v));
-      static_assert(std::ranges::size(v) == 1);
-      static_assert(*std::ranges::data(v) == 42);
+      constexpr std::ranges::single_view<int> sv{42};
+      static_assert(!std::ranges::empty(sv));
+      static_assert(std::ranges::size(sv) == 1);
+      static_assert(*std::ranges::data(sv) == 42);
    }
 
    {
@@ -899,6 +908,15 @@ int main()
       for (auto i : t)
          std::cout << i << '\n';
       
+   }
+
+   {
+      using namespace n902;
+
+      auto v = std::views::iota(1, 10) | n902::views::step(1);
+      auto it = v.begin();
+      it++; // post-increment
+      ++it; // pre-increment
    }
    
    {
