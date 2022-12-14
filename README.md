@@ -1,3 +1,15 @@
+
+### Get this product for $5
+
+<i>Packt is having its biggest sale of the year. Get this eBook or any other book, video, or course that you like just for $5 each</i>
+
+
+<b><p align='center'>[Buy now](https://packt.link/9781803243450)</p></b>
+
+
+<b><p align='center'>[Buy similar titles for just $5](https://subscription.packtpub.com/search)</p></b>
+
+
 # Template Metaprogramming with C++ 
 
 <a href="https://www.amazon.com/Template-Metaprogramming-everything-templates-metaprogramming/dp/1803243457?utm_source=github&utm_medium=repository&utm_campaign=9781801076012"><img src="https://images-na.ssl-images-amazon.com/images/I/41X9zP2asoL._SX258_BO1,204,203,200_.jpg" alt="Template Metaprogramming with C++ " height="256px" align="right"></a>
