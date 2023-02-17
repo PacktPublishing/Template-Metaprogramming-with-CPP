@@ -106,7 +106,8 @@ namespace n801
          }
          else if (!full())
          {
-            data_[++tail_] = value;
+            tail_ = (tail_ + 1) % N;
+            data_[tail_] = value;
             size_++;
          }
          else
@@ -576,16 +577,22 @@ int main()
          assert(b[1] == 2);
          assert(b[2] == 3);
 
-         b.pop_front();
+         assert(b.pop_front() == 1);
          assert(b.size() == 2);
          assert(b[0] == 2);
          assert(b[1] == 3);
 
-         b.pop_front();
+         assert(b.pop_front() == 2);
          assert(b.size() == 1);
          assert(b[0] == 3);
+         
+         b.push_back(4)
+         assert(b.size() == 2);
+         assert(b[0] == 3);
+         assert(b[1] == 4);
 
-         b.pop_front();
+         assert(b.pop_front() == 3);
+         assert(b.pop_front() == 4);
          assert(b.size() == 0);
       }
 
