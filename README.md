@@ -1,6 +1,3 @@
-
-
-
 # Template Metaprogramming with C++ 
 
 <a href="https://www.amazon.com/Template-Metaprogramming-everything-templates-metaprogramming/dp/1803243457?utm_source=github&utm_medium=repository&utm_campaign=9781801076012"><img src="https://images-na.ssl-images-amazon.com/images/I/41X9zP2asoL._SX258_BO1,204,203,200_.jpg" alt="Template Metaprogramming with C++ " height="256px" align="right"></a>
@@ -25,6 +22,10 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1803
 
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
+
+## Errata
+
+* Page 258: The line of code ``return value--;`` must be read as ``return value-1;`` or ``return --value;``
 
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
